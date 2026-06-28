@@ -1,0 +1,24 @@
+[Unit]
+Description=Dell MD Prometheus Exporter
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dell-md-exporter
+Group=dell-md-exporter
+EnvironmentFile=-/etc/default/dell-md-exporter
+ExecStart=/usr/local/bin/dell-md-exporter $DELL_MD_EXPORTER_ARGS
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ReadWritePaths=/tmp
+
+[Install]
+WantedBy=multi-user.target
