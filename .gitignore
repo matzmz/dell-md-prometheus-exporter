@@ -1,6 +1,6 @@
 docs/superpowers/*
 legacy/*
 dist/*
-dell-md-exporter
-dell-md-exporter-static
-dell_md_exporter
+/dell-md-exporter
+/dell-md-exporter-static
+/dell_md_exporter
